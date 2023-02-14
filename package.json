@@ -77,7 +77,11 @@
   },
   "peerDependencies": {
     "react": "*",
-    "react-native": "*"
+    "react-native": "*",
+    "react-native-vector-icons": ">=9.2.0",
+    "react-native-youtube-iframe": "^2.2.2",
+    "react-native-modal": "^13.0.1",
+    "@react-native-community/netinfo": "^9.3.7"
   },
   "engines": {
     "node": ">= 16.0.0"
