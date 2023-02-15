@@ -32,8 +32,8 @@ const YoutubePopupPlayerComponent = (props) => {
         </View>
       )
 
-    return <WarningMessageComponent locale='km' hasInternet={props.hasInternet} closeModal={() => props.setModalVisible(false)}
-              iconColor={props.iconColor} messageLabelStyle={props.messageLabelStyle}
+    return <WarningMessageComponent locale={props.locale} hasInternet={props.hasInternet} closeModal={() => props.setModalVisible(false)}
+              iconColor={props.iconColor} messageLabelStyle={props.messageLabelStyle} messageIconSize={props.messageIconSize}
            />
   }
 
