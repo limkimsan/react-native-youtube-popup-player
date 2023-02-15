@@ -10,7 +10,7 @@ const YoutubePopupPlayerComponent = (props) => {
   const [isLoading, setIsLoading] = useState(true);
   const onSwipeMove = (percentageShown) => {
     if (percentageShown <= 0.81)
-      props.setModalVisible(false)
+      props.closeModal()
   }
 
   const renderContent = () => {
@@ -18,7 +18,7 @@ const YoutubePopupPlayerComponent = (props) => {
       return (
         <View style={{height: '100%', width: "100%", justifyContent: 'center'}}>
           { (props.hasInternet && isLoading) &&
-            <ActivityIndicator size="large" color={props.indicatorColor || 'white'} style={{position: 'absolute', alignSelf: 'center'}} />
+            <ActivityIndicator size="large" color={props.indicatorColor || '#ffffff'} style={{position: 'absolute', alignSelf: 'center'}} />
           }
           <YoutubePlayer
             height={'100%'}
@@ -32,8 +32,8 @@ const YoutubePopupPlayerComponent = (props) => {
         </View>
       )
 
-    return <WarningMessageComponent locale={props.locale} hasInternet={props.hasInternet} closeModal={() => props.setModalVisible(false)}
-              iconColor={props.iconColor} messageLabelStyle={props.messageLabelStyle} messageIconSize={props.messageIconSize}
+    return <WarningMessageComponent locale={props.locale} hasInternet={props.hasInternet} closeModal={() => props.closeModal()}
+              iconColor={props.iconColor} messageLabelStyle={props.messageLabelStyle} messageIconSize={props.messageIconSize} closeButtonStyle={props.closeButtonStyle}
            />
   }
 
