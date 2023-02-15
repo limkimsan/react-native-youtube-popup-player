@@ -10,10 +10,8 @@ const WarningMessageComponent = (props) => {
   const message = props.hasInternet ? {en: "No video available", km: "មិនមានវីដេអូ"} : {en: "No internet connection", km: "មិនមានប្រព័ន្ធអ៊ីនធឺណិត"}
 
   const closeButton = () => {
-    return <TouchableOpacity onPress={() => props.closeModal()}
-              style={[styles.closeBtn, props.closeButtonStyle]}
-           >
-              <FeatherIcon name="x" color={props.iconColor || iconColor} size={24} />
+    return <TouchableOpacity onPress={() => props.closeModal()} style={[styles.closeBtn, props.closeButtonStyle]}>
+              <Icon name="x" color={props.iconColor || iconColor} size={24} />
            </TouchableOpacity>
   }
 
