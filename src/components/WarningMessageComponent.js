@@ -20,7 +20,7 @@ const WarningMessageComponent = (props) => {
       {closeButton()}
       <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
         <Icon name={iconName} size={props.messageIconSize || messageIconSize} color={props.iconColor || iconColor} />
-        <Text style={[styles.msgLabel, props.messageLabelStyle]}>{message[props.locale]}</Text>
+        <Text style={[styles.msgLabel, props.messageLabelStyle]}>{message[props.locale || 'km']}</Text>
       </View>
     </View>
   )
