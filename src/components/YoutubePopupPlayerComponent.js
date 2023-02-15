@@ -1,11 +1,40 @@
-import React from 'react';
-import {View, Text} from 'react-native';
+import React, {useState} from 'react';
+import {View, ActivityIndicator} from 'react-native';
 import Modal from 'react-native-modal';
+import YoutubePlayer from "react-native-youtube-iframe";
+
+import WarningMessageComponent from './WarningMessageComponent';
+import youtubeHelper from '../helpers/youtube_helper';
 
 const YoutubePopupPlayerComponent = (props) => {
+  const [isLoading, setIsLoading] = useState(true);
   const onSwipeMove = (percentageShown) => {
     if (percentageShown <= 0.81)
       props.setModalVisible(false)
+  }
+
+  const renderContent = () => {
+    if (!!props.videoUrl && props.hasInternet)
+      return (
+        <View style={{height: '100%', width: "100%", justifyContent: 'center'}}>
+          { (props.hasInternet && isLoading) &&
+            <ActivityIndicator size="large" color={props.indicatorColor || 'white'} style={{position: 'absolute', alignSelf: 'center'}} />
+          }
+          <YoutubePlayer
+            height={'100%'}
+            play={true}
+            videoId={youtubeHelper.getVideoId(props.videoUrl)}
+            onReady={() => setIsLoading(false)}
+            webViewProps={{
+              containerStyle: {paddingTop: props.playerPaddingTop || '55%'}
+            }}
+          />
+        </View>
+      )
+
+    return <WarningMessageComponent locale='km' hasInternet={props.hasInternet} closeModal={() => props.setModalVisible(false)}
+              iconColor={props.iconColor} messageLabelStyle={props.messageLabelStyle}
+           />
   }
 
   return (
@@ -19,9 +48,7 @@ const YoutubePopupPlayerComponent = (props) => {
       backdropOpacity={0.8}
       animationOut="zoomOut"
     >
-      <View style={{backgroundColor: 'white', padding: 20}}>
-        <Text>Poupup modal</Text>
-      </View>
+      {renderContent()}
     </Modal>
   )
 }
