@@ -6,8 +6,8 @@ import {pressableSize, messageIconSize, iconColor, textColor} from '../constants
 import {messageLabelFontSize} from '../constants/font_size_constant';
 
 const WarningMessageComponent = (props) => {
-  const iconName = props.hasInternet ? "video-off" : "wifi-off";
-  const message = props.hasInternet ? {en: "No video available", km: "មិនមានវីដេអូ"} : {en: "No internet connection", km: "មិនមានប្រព័ន្ធអ៊ីនធឺណិត"}
+  const iconName = (!props.hasInternet || props.hasErrorNetwork) ? "wifi-off" : "video-off";
+  const message = (!props.hasInternet || props.hasErrorNetwork) ? {en: "No internet connection", km: "មិនមានប្រព័ន្ធអ៊ីនធឺណិត"} : {en: "No video available", km: "មិនមានវីដេអូ"}
 
   const closeButton = () => {
     return <TouchableOpacity onPress={() => props.closeModal()} style={[styles.closeBtn, props.closeButtonStyle]}>
