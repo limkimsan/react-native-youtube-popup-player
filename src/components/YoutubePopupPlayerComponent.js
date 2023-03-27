@@ -47,11 +47,11 @@ const YoutubePopupPlayerComponent = (props) => {
         <View style={{height: '100%', width: "100%", justifyContent: 'center'}}>
           <YoutubeIframePlayer
             videoUrl={props.videoUrl}
-            height={props.height}
+            height={props.iframeHeight}
             width='100%'
             locale={props.locale}
             durationFontSize={props.durationFontSize}
-            loadingColor={props.indicatorColor || '#ffffff'}
+            loadingColor={props.loadingIndicatorColor || '#ffffff'}
             isTablet={props.isTablet}
             onReady={() => onReady()}
           />
