@@ -50,9 +50,6 @@
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
-  "dependencies": {
-    "react-native-youtube-iframe-player": "*"
-  },
   "devDependencies": {
     "@commitlint/config-conventional": "^17.0.2",
     "@evilmartians/lefthook": "^1.2.2",
@@ -84,7 +81,8 @@
     "react-native": "*",
     "react-native-modal": "^13.0.1",
     "react-native-vector-icons": ">=9.2.0",
-    "react-native-webview": "^11.23.1"
+    "react-native-webview": "^11.23.1",
+    "react-native-youtube-iframe-player": "*"
   },
   "engines": {
     "node": ">= 16.0.0"
