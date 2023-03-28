@@ -1,6 +1,6 @@
-<span><img src="https://user-images.githubusercontent.com/18114944/218962104-0533269e-2ff3-49a5-9dd4-d7dd14e821e3.png" width="250" height="500" /></span>
-
 React Native Youtube Popup Player is a custom Youtube iframe player with a popup style and can exit the player by swiping down/up.
+
+<span><img src="https://user-images.githubusercontent.com/18114944/218962104-0533269e-2ff3-49a5-9dd4-d7dd14e821e3.png" width="250" height="500" /></span>
 
 ## Support
 iOS & Android
