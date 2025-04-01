@@ -1,6 +1,6 @@
 {
   "name": "react-native-youtube-popup-player",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "A custom Youtube iframe player with a popup style and can exit the player by swiping down/up",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
@@ -84,7 +84,7 @@
     "react-native-modal": "^14.0.0-rc.1",
     "react-native-vector-icons": ">=9.2.0",
     "react-native-webview": "^13.13.2",
-    "react-native-youtube-iframe-player": "*"
+    "react-native-youtube-iframe": "^2.2.2"
   },
   "engines": {
     "node": ">= 16.0.0"
