@@ -70,6 +70,7 @@ const YoutubePopupPlayerComponent = (props) => {
       backdropColor='black'
       backdropOpacity={0.8}
       animationOut="zoomOut"
+      onRequestClose={() => props.closeModal()}
     >
       {renderContent()}
     </Modal>
